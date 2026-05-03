@@ -44,7 +44,7 @@ export default function Services() {
         className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-20 gap-8"
       >
         <div className="max-w-2xl text-center md:text-left">
-          <p className="font-h3 text-primary-container uppercase tracking-widest mb-4 text-sm">Core Services</p>
+          <p className="font-h3 text-primary-container uppercase tracking-widest mb-4 text-sm">Technical Expertise</p>
           <h2 className="text-3xl md:text-5xl font-bold">Building Interfaces With Precision</h2>
         </div>
         <div className="h-[1px] flex-1 bg-white/10 hidden md:block mb-4 mx-8"></div>

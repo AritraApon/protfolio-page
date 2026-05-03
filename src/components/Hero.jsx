@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import MagneticButton from "./MagneticButton";
 import Link from "next/link";
 import { FaDownload } from "react-icons/fa";
 
@@ -28,23 +27,53 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-on-surface-variant/70 max-w-xl mx-auto md:mx-0 font-body-md">
-          I am a Junior Web Developer dedicated to building fast, responsive, and visually stunning web applications. Specialized in React and Next.js, I focus on writing clean, maintainable code and creating seamless user experiences.
+          I build responsive full-stack web applications using React, Next.js, and MongoDB. Passionate about creating clean UI, authentication systems, and real-world user experiences.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap gap-5 pt-6 justify-center md:justify-start">
-          <MagneticButton className="w-full sm:w-auto px-10 py-4 rounded-2xl bg-primary-container text-on-primary-container font-h3 text-[18px] btn-hover-scale transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20"  >
-            <Link href='#projects'>View Projects</Link> <span className="material-symbols-outlined">arrow_forward</span>
-          </MagneticButton>
-          <MagneticButton className="w-full sm:w-auto px-10 py-4 rounded-2xl border border-white/10 text-on-surface font-h3 text-[18px] btn-hover-scale transition-all hover:bg-white/5 flex items-center gap-2">
-          Resume <FaDownload />
-          </MagneticButton>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="w-full sm:w-auto"
+          >
+            <Link 
+              href="#projects" 
+              className="w-full px-10 py-4 rounded-2xl bg-[#58A6FF] text-[#0B0E14] font-h3 text-[18px] flex items-center justify-center gap-2 shadow-lg shadow-[#58A6FF]/20 hover:bg-[#58A6FF]/90 transition-colors"
+            >
+              View Projects <span className="material-symbols-outlined">arrow_forward</span>
+            </Link>
+          </motion.div>
+          
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="w-full sm:w-auto"
+          >
+            <a 
+              href="/Aritro_Mazumdar_Resume.pdf" 
+              download 
+              className="w-full px-10 py-4 rounded-2xl bg-[#F78166] text-[#0B0E14] font-h3 text-[18px] flex items-center justify-center gap-2 shadow-lg shadow-[#F78166]/20 hover:bg-[#F78166]/90 transition-colors"
+            >
+              Download Resume <FaDownload />
+            </a>
+          </motion.div>
         </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
+        animate={{ y: [0, -15, 0] }}
+        transition={{ 
+          duration: 0.8,
+          y: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
         viewport={{ once: true }}
         className="relative order-1 md:order-2"
       >
